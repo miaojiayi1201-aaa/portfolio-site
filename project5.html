@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>宠物自动梳毛器 | Industrial Design Portfolio</title>
+  <meta name="description" content="面向家庭养宠场景的护理工具，通过安全梳齿、浮毛收集与一键清理设计提升梳毛效率与舒适体验。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><span class="brand-mark"></span><span>MiaoJiayi 作品集展示</span></a>
+      <nav class="nav"><a href="index.html#portfolio">Portfolio</a></nav>
+    </div>
+  </header>
+
+  <main class="project-main">
+    <div class="container">
+      <a class="back-link" href="index.html">← 返回首页</a>
+      <section class="project-hero">
+        <div class="section-box">
+          <div class="project-kicker">Pet Care Tool</div>
+          <h1 class="project-title">宠物自动梳毛器</h1>
+          <p class="project-subtitle">面向家庭养宠场景的护理工具，通过安全梳齿、浮毛收集与一键清理设计提升梳毛效率与舒适体验。</p>
+          <div class="meta-grid"><article><div class="meta-label">Category</div><div class="meta-value">Industrial Design</div></article><article><div class="meta-label">Keyword</div><div class="meta-value">宠物护理 / 一键清理</div></article><article><div class="meta-label">Focus</div><div class="meta-value">友好接触</div></article></div>
+        </div>
+        <div class="project-hero-media"><img src="images/cover5.png" alt="宠物自动梳毛器主图"></div>
+      </section>
+      <div class="content-grid">
+        <section class="section-box">
+          <h2>作品介绍</h2>
+          <p>本设计关注宠物梳毛过程中常见的掉毛分散、清理麻烦以及握持疲劳问题，试图优化用户与宠物双方的使用体验。</p><p>通过弧面握柄、安全梳齿与透明集毛仓的结合，梳理、收集与清理三个环节被组织成更加顺畅的日常护理流程。</p>
+        </section>
+        <section class="section-box">
+          <h2>设计说明</h2>
+          <p>产品在触点细节上强化圆润过渡与亲和感，以降低对宠物皮肤的刺激。侧边功能键和一键推出结构则帮助用户快速完成浮毛处理。</p><p>材质上采用 ABS、PC、TPR 包胶和不锈钢梳齿，颜色以奶油白、浅灰和雾青绿为主，整体呈现温和、可靠、轻医疗化的设计语言。</p>
+        </section>
+        <section class="section-box">
+          <h2>效果展示</h2>
+          <div class="gallery"><img src="images/p5-1.png" alt="宠物自动梳毛器展示图1" loading="lazy"><img src="images/p5-2.png" alt="宠物自动梳毛器展示图2" loading="lazy"><img src="images/p5-3.png" alt="宠物自动梳毛器展示图3" loading="lazy"><img src="images/p5-4.png" alt="宠物自动梳毛器展示图4" loading="lazy"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>宠物自动梳毛器</span>
+      <span><a href="index.html">Back to portfolio</a></span>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="关闭大图">×</button>
+    <img src="" alt="">
+  </div>
+  <script>
+    (function () {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = lightbox.querySelector('img');
+      const closeBtn = lightbox.querySelector('.lightbox-close');
+      const targets = document.querySelectorAll('.project-hero-media img, .gallery img');
+
+      function openLightbox(img) {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || '';
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        lightboxImg.src = '';
+      }
+
+      targets.forEach((img) => {
+        img.addEventListener('click', () => openLightbox(img));
+      });
+
+      closeBtn.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    })();
+  </script>
+
+</body>
+</html>

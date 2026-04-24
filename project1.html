@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>桌面模块化香薰加湿器 | Industrial Design Portfolio</title>
+  <meta name="description" content="结合加湿、香薰与氛围灯功能的桌面产品设计，以温和体量与模块化结构提升居家与办公场景的舒适体验。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><span class="brand-mark"></span><span>MiaoJiayi 作品集展示</span></a>
+      <nav class="nav"><a href="index.html#portfolio">Portfolio</a></nav>
+    </div>
+  </header>
+
+  <main class="project-main">
+    <div class="container">
+      <a class="back-link" href="index.html">← 返回首页</a>
+      <section class="project-hero">
+        <div class="section-box">
+          <div class="project-kicker">Calm Living Device</div>
+          <h1 class="project-title">桌面模块化香薰加湿器</h1>
+          <p class="project-subtitle">结合加湿、香薰与氛围灯功能的桌面产品设计，以温和体量与模块化结构提升居家与办公场景的舒适体验。</p>
+          <div class="meta-grid"><article><div class="meta-label">Category</div><div class="meta-value">Industrial Design</div></article><article><div class="meta-label">Keyword</div><div class="meta-value">家居小家电 / 模块化结构</div></article><article><div class="meta-label">Focus</div><div class="meta-value">加湿 / 香薰 / 氛围灯</div></article></div>
+        </div>
+        <div class="project-hero-media"><img src="images/cover1.png" alt="桌面模块化香薰加湿器主图"></div>
+      </section>
+      <div class="content-grid">
+        <section class="section-box">
+          <h2>作品介绍</h2>
+          <p>本项目聚焦现代桌面环境中的舒适度与情绪感需求，将加湿、香薰和柔和灯光整合为一个统一设备，减少多产品并置带来的占位与操作负担。</p><p>整体外观以圆角体块和低饱和暖色表达安静、友好的产品气质，并通过上下模块分层，让加水、拆洗与日常维护更直观。</p>
+        </section>
+        <section class="section-box">
+          <h2>设计说明</h2>
+          <p>产品围绕“易使用、易清洁、易融入空间”三条逻辑展开。顶部模块负责出雾与开盖操作，中段为主控区域，底部灯带用于营造轻柔环境光，形成功能与情绪体验的双重层次。</p><p>材质方面采用 ABS、PP、PC 与硅胶的组合，兼顾表面细腻触感、透明可视水箱和稳定防滑支撑。整体 CMF 以米白、浅灰和暖橙点缀为主，强化家居化与治愈感。</p>
+        </section>
+        <section class="section-box">
+          <h2>效果展示</h2>
+          <div class="gallery"><img src="images/p1-1.png" alt="桌面模块化香薰加湿器展示图1" loading="lazy"><img src="images/p1-2.png" alt="桌面模块化香薰加湿器展示图2" loading="lazy"><img src="images/p1-3.png" alt="桌面模块化香薰加湿器展示图3" loading="lazy"><img src="images/p1-4.png" alt="桌面模块化香薰加湿器展示图4" loading="lazy"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>桌面模块化香薰加湿器</span>
+      <span><a href="index.html">Back to portfolio</a></span>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="关闭大图">×</button>
+    <img src="" alt="">
+  </div>
+  <script>
+    (function () {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = lightbox.querySelector('img');
+      const closeBtn = lightbox.querySelector('.lightbox-close');
+      const targets = document.querySelectorAll('.project-hero-media img, .gallery img');
+
+      function openLightbox(img) {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || '';
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        lightboxImg.src = '';
+      }
+
+      targets.forEach((img) => {
+        img.addEventListener('click', () => openLightbox(img));
+      });
+
+      closeBtn.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    })();
+  </script>
+
+</body>
+</html>

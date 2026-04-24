@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>厨房壁挂式调味收纳器 | Industrial Design Portfolio</title>
+  <meta name="description" content="通过壁挂安装、可视化窗口与分仓逻辑提升厨房调味品管理效率，减少台面堆积并优化烹饪流程。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><span class="brand-mark"></span><span>MiaoJiayi 作品集展示</span></a>
+      <nav class="nav"><a href="index.html#portfolio">Portfolio</a></nav>
+    </div>
+  </header>
+
+  <main class="project-main">
+    <div class="container">
+      <a class="back-link" href="index.html">← 返回首页</a>
+      <section class="project-hero">
+        <div class="section-box">
+          <div class="project-kicker">Kitchen Organization</div>
+          <h1 class="project-title">厨房壁挂式调味收纳器</h1>
+          <p class="project-subtitle">通过壁挂安装、可视化窗口与分仓逻辑提升厨房调味品管理效率，减少台面堆积并优化烹饪流程。</p>
+          <div class="meta-grid"><article><div class="meta-label">Category</div><div class="meta-value">Industrial Design</div></article><article><div class="meta-label">Keyword</div><div class="meta-value">厨房收纳 / 壁挂系统</div></article><article><div class="meta-label">Focus</div><div class="meta-value">可视化分仓</div></article></div>
+        </div>
+        <div class="project-hero-media"><img src="images/cover3.png" alt="厨房壁挂式调味收纳器主图"></div>
+      </section>
+      <div class="content-grid">
+        <section class="section-box">
+          <h2>作品介绍</h2>
+          <p>本设计面向小户型厨房的高频收纳需求，希望将零散的调味瓶、调味包与小配料整合为一个更有秩序的壁挂系统。</p><p>产品通过透明视窗、上下双层分类和单手开合方式，帮助用户在烹饪中快速识别、快速取用，并减轻台面杂乱。</p>
+        </section>
+        <section class="section-box">
+          <h2>设计说明</h2>
+          <p>结构上采用上层瓶罐区与下层可拆卸小盒区，兼顾不同颗粒度调味料的存放。安装方式则通过背板与挂点控制稳定性，同时尽量降低安装难度。</p><p>CMF 以珍珠白、浅灰、雾绿色和原木色点缀构成干净、自然的厨房语言；材质组合兼顾防油污、易擦拭和食品接触友好性。</p>
+        </section>
+        <section class="section-box">
+          <h2>效果展示</h2>
+          <div class="gallery"><img src="images/p3-1.png" alt="厨房壁挂式调味收纳器展示图1" loading="lazy"><img src="images/p3-2.png" alt="厨房壁挂式调味收纳器展示图2" loading="lazy"><img src="images/p3-3.png" alt="厨房壁挂式调味收纳器展示图3" loading="lazy"><img src="images/p3-4.png" alt="厨房壁挂式调味收纳器展示图4" loading="lazy"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>厨房壁挂式调味收纳器</span>
+      <span><a href="index.html">Back to portfolio</a></span>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="关闭大图">×</button>
+    <img src="" alt="">
+  </div>
+  <script>
+    (function () {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = lightbox.querySelector('img');
+      const closeBtn = lightbox.querySelector('.lightbox-close');
+      const targets = document.querySelectorAll('.project-hero-media img, .gallery img');
+
+      function openLightbox(img) {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || '';
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        lightboxImg.src = '';
+      }
+
+      targets.forEach((img) => {
+        img.addEventListener('click', () => openLightbox(img));
+      });
+
+      closeBtn.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    })();
+  </script>
+
+</body>
+</html>

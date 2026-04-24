@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>户外便携咖啡套装机 | Industrial Design Portfolio</title>
+  <meta name="description" content="将冲泡、收纳、饮用与随身携带整合为一体的户外咖啡系统，满足露营与旅行场景下的轻量化咖啡体验。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><span class="brand-mark"></span><span>MiaoJiayi 作品集展示</span></a>
+      <nav class="nav"><a href="index.html#portfolio">Portfolio</a></nav>
+    </div>
+  </header>
+
+  <main class="project-main">
+    <div class="container">
+      <a class="back-link" href="index.html">← 返回首页</a>
+      <section class="project-hero">
+        <div class="section-box">
+          <div class="project-kicker">Outdoor Lifestyle</div>
+          <h1 class="project-title">户外便携咖啡套装机</h1>
+          <p class="project-subtitle">将冲泡、收纳、饮用与随身携带整合为一体的户外咖啡系统，满足露营与旅行场景下的轻量化咖啡体验。</p>
+          <div class="meta-grid"><article><div class="meta-label">Category</div><div class="meta-value">Industrial Design</div></article><article><div class="meta-label">Keyword</div><div class="meta-value">户外生活 / 一体收纳</div></article><article><div class="meta-label">Focus</div><div class="meta-value">便携咖啡</div></article></div>
+        </div>
+        <div class="project-hero-media"><img src="images/cover6.png" alt="户外便携咖啡套装机主图"></div>
+      </section>
+      <div class="content-grid">
+        <section class="section-box">
+          <h2>作品介绍</h2>
+          <p>本项目试图解决户外咖啡器具零散、携带不便和操作繁琐的问题，将咖啡模块、杯体、附件和说明件收纳进一个紧凑单元中。</p><p>在关闭状态下，产品像一个耐用便携盒；展开后则形成完整冲泡路径，兼具收纳效率与使用仪式感。</p>
+        </section>
+        <section class="section-box">
+          <h2>设计说明</h2>
+          <p>结构围绕“展开即用、用后即收”设计，通过分层布局让冲煮模块、保温杯与配件有明确位置。使用流程既可支持手压，也可呈现电动萃取的场景表达。</p><p>CMF 以橄榄绿、沙 beige 和深灰构成户外装备气质；材质组合强调耐冲击、易清洁与食品接触安全，让产品更贴近露营与旅行方式。</p>
+        </section>
+        <section class="section-box">
+          <h2>效果展示</h2>
+          <div class="gallery"><img src="images/p6-1.png" alt="户外便携咖啡套装机展示图1" loading="lazy"><img src="images/p6-2.png" alt="户外便携咖啡套装机展示图2" loading="lazy"><img src="images/p6-3.png" alt="户外便携咖啡套装机展示图3" loading="lazy"><img src="images/p6-4.png" alt="户外便携咖啡套装机展示图4" loading="lazy"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>户外便携咖啡套装机</span>
+      <span><a href="index.html">Back to portfolio</a></span>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="关闭大图">×</button>
+    <img src="" alt="">
+  </div>
+  <script>
+    (function () {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = lightbox.querySelector('img');
+      const closeBtn = lightbox.querySelector('.lightbox-close');
+      const targets = document.querySelectorAll('.project-hero-media img, .gallery img');
+
+      function openLightbox(img) {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || '';
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        lightboxImg.src = '';
+      }
+
+      targets.forEach((img) => {
+        img.addEventListener('click', () => openLightbox(img));
+      });
+
+      closeBtn.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    })();
+  </script>
+
+</body>
+</html>

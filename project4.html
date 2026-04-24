@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>便携式早餐杯机 | Industrial Design Portfolio</title>
+  <meta name="description" content="集搅拌、轻加热、盛装与携带于一体的便携早餐产品，为通勤与轻食场景提供更高效的一体化体验。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><span class="brand-mark"></span><span>MiaoJiayi 作品集展示</span></a>
+      <nav class="nav"><a href="index.html#portfolio">Portfolio</a></nav>
+    </div>
+  </header>
+
+  <main class="project-main">
+    <div class="container">
+      <a class="back-link" href="index.html">← 返回首页</a>
+      <section class="project-hero">
+        <div class="section-box">
+          <div class="project-kicker">Morning Routine</div>
+          <h1 class="project-title">便携式早餐杯机</h1>
+          <p class="project-subtitle">集搅拌、轻加热、盛装与携带于一体的便携早餐产品，为通勤与轻食场景提供更高效的一体化体验。</p>
+          <div class="meta-grid"><article><div class="meta-label">Category</div><div class="meta-value">Industrial Design</div></article><article><div class="meta-label">Keyword</div><div class="meta-value">便携早餐 / 一体化杯机</div></article><article><div class="meta-label">Focus</div><div class="meta-value">通勤生活</div></article></div>
+        </div>
+        <div class="project-hero-media"><img src="images/cover4.png" alt="便携式早餐杯机主图"></div>
+      </section>
+      <div class="content-grid">
+        <section class="section-box">
+          <h2>作品介绍</h2>
+          <p>本项目以快节奏生活下的早餐准备痛点为出发点，将制作、饮用和携带整合到同一产品结构之中。</p><p>用户可以直接在杯体中加入燕麦、奶昔或代餐食材，完成搅拌后随手带走，减少容器切换与清洁步骤。</p>
+        </section>
+        <section class="section-box">
+          <h2>设计说明</h2>
+          <p>产品采用带提手的杯盖结构和可拆卸刀座模块，在保证便携性的同时，也保留了拆洗便利性。底部交互区以极简按钮与清晰图标组织模式切换。</p><p>材料方面以食品级 Tritan、不锈钢、ABS 和硅胶密封圈为核心，搭配柔和橙色作为识别点，营造轻巧、干净、日常化的产品气质。</p>
+        </section>
+        <section class="section-box">
+          <h2>效果展示</h2>
+          <div class="gallery"><img src="images/p4-1.png" alt="便携式早餐杯机展示图1" loading="lazy"><img src="images/p4-2.png" alt="便携式早餐杯机展示图2" loading="lazy"><img src="images/p4-3.png" alt="便携式早餐杯机展示图3" loading="lazy"><img src="images/p4-4.png" alt="便携式早餐杯机展示图4" loading="lazy"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>便携式早餐杯机</span>
+      <span><a href="index.html">Back to portfolio</a></span>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="关闭大图">×</button>
+    <img src="" alt="">
+  </div>
+  <script>
+    (function () {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = lightbox.querySelector('img');
+      const closeBtn = lightbox.querySelector('.lightbox-close');
+      const targets = document.querySelectorAll('.project-hero-media img, .gallery img');
+
+      function openLightbox(img) {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || '';
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        lightboxImg.src = '';
+      }
+
+      targets.forEach((img) => {
+        img.addEventListener('click', () => openLightbox(img));
+      });
+
+      closeBtn.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    })();
+  </script>
+
+</body>
+</html>
